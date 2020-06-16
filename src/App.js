@@ -6,15 +6,16 @@ import Header from './components/header.component';
 import Home from './components/home.component';
 import RecipesList from './components/recipes-list.component';
 import RecipeDetail from './components/recipe-detail.component';
+import Footer from './components/footer.component';
 
 function App() {
   return (
     <Router>
       <Header/>
-      <br/>
       <Route path="/" exact component={Home} />
       <Route path="/recipes" component={RecipesList} />
       <Route path="/recipe/:id" component={RecipeDetail} />
+      <Footer/>
     </Router>
     
   );
