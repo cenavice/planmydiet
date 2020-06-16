@@ -16,7 +16,7 @@ export default class Header extends Component {
                     </Link>
                     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                         <Link to="/" className="mr-5 hover:text-gray-900 cursor-pointe">Home</Link>
-                        <Link to="/recipes" className="mr-5 hover:text-gray-900 cursor-pointe">Recipe</Link>
+                        <Link to="/recipes" className="mr-5 hover:text-gray-900 cursor-pointe">Recipes</Link>
                         <Link to="/pricing" className="mr-5 hover:text-gray-900 cursor-pointe">Pricing</Link>
                         <Link to="/about" className="mr-5 hover:text-gray-900 cursor-pointe">About Us</Link>
                     </nav>

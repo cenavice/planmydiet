@@ -15,10 +15,10 @@ export default class RecipesList extends Component {
                     </div>
                     <div className="flex flex-wrap -m-4">
                         <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a href="detail-recipe.html" className="block relative h-48 rounded overflow-hidden">
+                            <Link to={"/recipe/"+1} className="block relative h-48 rounded overflow-hidden">
                                 <img alt="ecommerce" className="object-cover object-center w-full h-full block"
                                     src="https://dummyimage.com/420x260"/>
-                            </a>
+                            </Link>
                             <div className="mt-4">
                                 <h3 className="text-green-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
                                 <a href="detail-recipe.html" className="text-gray-900 title-font text-lg font-medium">The Catalyzer</a>

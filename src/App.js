@@ -5,6 +5,7 @@ import './css/main.css';
 import Header from './components/header.component';
 import Home from './components/home.component';
 import RecipesList from './components/recipes-list.component';
+import RecipeDetail from './components/recipe-detail.component';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Header/>
       <br/>
       <Route path="/" exact component={Home} />
-      <Route path="/recipes" exact component={RecipesList} />
+      <Route path="/recipes" component={RecipesList} />
+      <Route path="/recipe/:id" component={RecipeDetail} />
     </Router>
     
   );
