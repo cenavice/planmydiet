@@ -1,6 +1,29 @@
 import React, { Component } from 'react';
+const axios = require('axios');
 
 export default class RecipeDetail extends Component {
+    constructor(props) {
+        super(props);
+
+        // this.onChangeUsername = this.onChangeUsername.bind(this);
+
+        this.state = {
+            recipe: '',
+        }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:5000/fatsecret/get-recipe/')
+            .then(response => {
+                this.setState({
+                    recipe: response.data.recipe,
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }
+      
     render() {
         return (
             <section className="text-gray-700 body-font">
@@ -11,14 +34,14 @@ export default class RecipeDetail extends Component {
                         </div>
                         <div className="flex flex-col text-left w-full mt-8 mb-8">
                             <h2 className="text-xs text-green-500 tracking-widest font-medium title-font mb-1">Dessert</h2>
-                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Definitely Ice Cream</h1>
-                            <p className="leading-relaxed text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus dignissimos voluptas architecto iure natus sint ut, ullam consequatur perspiciatis.</p>
+                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">{ this.state.recipe.recipe_name }</h1>
+                            <p className="leading-relaxed text-base">{ this.state.recipe.recipe_description }</p>
                             <ul className="flex flex-wrap list-none mt-3">
                                 <li className="lg:w-1/2 mb-1 w-1/2 text-left">
-                                <a className="text-gray-600">Yields : <span className="text-green-700 font-semibold">6 Servings</span></a>
+                                <p className="text-gray-600">Yields : <span className="text-green-700 font-semibold">6 Servings</span></p>
                                 </li>
                                 <li className="lg:w-1/2 mb-1 w-1/2 text-right">
-                                <a className="text-gray-600">Total Time : <span className="text-green-700 font-semibold">15 Minutes</span></a>
+                                <p className="text-gray-600">Total Time : <span className="text-green-700 font-semibold">15 Minutes</span></p>
                                 </li>
                             </ul>
                         </div>
