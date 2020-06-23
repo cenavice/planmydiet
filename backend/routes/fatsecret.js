@@ -72,11 +72,44 @@ router.route('/get-food').get((req, res) => {
 
 });
 
+router.route('/search-recipe').get((req, res) => {
+    
+    let sessionData = {
+        token: req.session.fatSecretToken,
+        expires_in: req.session.fatSecretTokenExpiresIn
+    }
+
+    const url = 'https://platform.fatsecret.com/rest/server.api';
+
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + sessionData.token 
+    };
+
+    let formData = {
+        'method': 'food.search',
+        'search_expression': 'chicken',
+        'page_number': 1,
+        'max_results': 20,
+        'format': 'json'
+    }
+    
+    axios.get(url, { params: formData, headers: headers})
+        .then(response => {
+            res.send(flatted.parse(flatted.stringify(response.data)));
+        })
+        .catch(err => {
+            res.send(flatted.parse(flatted.stringify(err)));
+        });
+
+    res.json('asd');
+});
+
 router.route('/get-recipe').get((req, res) => {
 
     let sessionData = {
         // token: req.session.fatSecretToken,
-        token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1OTI2NjI3MzUsImV4cCI6MTU5Mjc0OTEzNSwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjoiYmFzaWMiLCJjbGllbnRfaWQiOiI1Y2E0YWM4MzU5YzI0YTc4OTk0M2JkNzk0ODE4NDI4YSIsInNjb3BlIjpbImJhc2ljIl19.Kj0UPnK62PGoVoXt1q7eGwMhw8nWWCAOv2bOsySVLFp9iJ-W4tXyNf0Hty2lzgOoojXqjeQZ06sW8fwX9fEGFHpsOAMmNjUvJGe6nymUHWq-miSYq6xxhiM-C__Rqbo9Grn3jzRHfyKWKE-QG7PVp0PyVZsM4_iCFI4uRtDDHWFoLYOZU4acPUcDMkIFswj9eDxtxweAaodeygMlu1LUkkh7hJzFzBYY-NmWBiJpn3y3MhaooqtpDW1yVW7eF4zPHeV6A9RRAtr7oQNhbyl-QFvAMBF6s5NUq9zqHei66rq962Jq557-OR-rNVHPMIdZAAsUv_Da28_psknG4iuLXA',
+        token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1OTI5MjA3NjIsImV4cCI6MTU5MzAwNzE2MiwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjoiYmFzaWMiLCJjbGllbnRfaWQiOiI1Y2E0YWM4MzU5YzI0YTc4OTk0M2JkNzk0ODE4NDI4YSIsInNjb3BlIjpbImJhc2ljIl19.lYSX6SvTAK_aqKl0tloTvxtqnKWh1SWuCJfe9Lk71ngxpm3-bFJ41I-iiqRwBL5aQ5b2c0f3XA0rhUao-GzV6PRKKaVfvleiL-QWgzs1QOyaVcR6Gn3FcCJA0SY0BR5JQdzNNKdUH40cT0WvE9pWiOK-x5CO6pxzK-sEGGzNc8-taeT2MM2tlAb-i7Ka6hFC5jM8OvqJtK1ChJKllVl4KISrl40Lljp0np2T1N9ZFUFK_4x91-8NsshA5FxgjP5iRzGQbF44zOi6qY19Nmrgl-7lmyHgTdCa3tbmPvb9SqNM9OC8MFyjD2wOigm78yVJJZs4cHvJX5g9BnVrDilu5g',
         expires_in: req.session.fatSecretTokenExpiresIn
     }
 
