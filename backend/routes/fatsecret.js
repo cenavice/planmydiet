@@ -76,7 +76,7 @@ router.route('/search-recipe').post((req, res) => {
     
     let sessionData = {
         // token: req.session.fatSecretToken,
-        token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1OTI5MjA3NjIsImV4cCI6MTU5MzAwNzE2MiwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjoiYmFzaWMiLCJjbGllbnRfaWQiOiI1Y2E0YWM4MzU5YzI0YTc4OTk0M2JkNzk0ODE4NDI4YSIsInNjb3BlIjpbImJhc2ljIl19.lYSX6SvTAK_aqKl0tloTvxtqnKWh1SWuCJfe9Lk71ngxpm3-bFJ41I-iiqRwBL5aQ5b2c0f3XA0rhUao-GzV6PRKKaVfvleiL-QWgzs1QOyaVcR6Gn3FcCJA0SY0BR5JQdzNNKdUH40cT0WvE9pWiOK-x5CO6pxzK-sEGGzNc8-taeT2MM2tlAb-i7Ka6hFC5jM8OvqJtK1ChJKllVl4KISrl40Lljp0np2T1N9ZFUFK_4x91-8NsshA5FxgjP5iRzGQbF44zOi6qY19Nmrgl-7lmyHgTdCa3tbmPvb9SqNM9OC8MFyjD2wOigm78yVJJZs4cHvJX5g9BnVrDilu5g',
+        token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1OTMwMDgyMDUsImV4cCI6MTU5MzA5NDYwNSwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjoiYmFzaWMiLCJjbGllbnRfaWQiOiI1Y2E0YWM4MzU5YzI0YTc4OTk0M2JkNzk0ODE4NDI4YSIsInNjb3BlIjpbImJhc2ljIl19.R1Tzp1meovu6tdhsMA5Mr_wnmeYK6niIUw9A5qBV7KThZnDe70eyUJgL5svq14DIN9WOfU-6-36DV0uXc24azO9O6FlM6aec2f_TVTMmG1uI421jkdyzAIhtpd2wKv-RvGs9G-lb-i3MI5sHlNRPT8Bov3BatCwIEKzZ6Mjgf_ICv8kU0nHWSDtgfHKm3Z_aVF23yWNDXz8Ve7xDiOCbRauoASLhGvuoJyQq3Bb4VaOYdrOdFHTb3Tg_vjxVVUSLCTSWEyBELlLewAI60L9TMQ_Sk6M6xue8K4L4etXFR-S7yZ7eWhLQxLgrFD5WoXMFSRv0bWfr8e4x-wBWvr-lZQ',
         expires_in: req.session.fatSecretTokenExpiresIn
     }
 
@@ -104,11 +104,11 @@ router.route('/search-recipe').post((req, res) => {
         });
 });
 
-router.route('/get-recipe').get((req, res) => {
+router.route('/get-recipe/:id').get((req, res) => {
 
     let sessionData = {
         // token: req.session.fatSecretToken,
-        token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1OTI5MjA3NjIsImV4cCI6MTU5MzAwNzE2MiwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjoiYmFzaWMiLCJjbGllbnRfaWQiOiI1Y2E0YWM4MzU5YzI0YTc4OTk0M2JkNzk0ODE4NDI4YSIsInNjb3BlIjpbImJhc2ljIl19.lYSX6SvTAK_aqKl0tloTvxtqnKWh1SWuCJfe9Lk71ngxpm3-bFJ41I-iiqRwBL5aQ5b2c0f3XA0rhUao-GzV6PRKKaVfvleiL-QWgzs1QOyaVcR6Gn3FcCJA0SY0BR5JQdzNNKdUH40cT0WvE9pWiOK-x5CO6pxzK-sEGGzNc8-taeT2MM2tlAb-i7Ka6hFC5jM8OvqJtK1ChJKllVl4KISrl40Lljp0np2T1N9ZFUFK_4x91-8NsshA5FxgjP5iRzGQbF44zOi6qY19Nmrgl-7lmyHgTdCa3tbmPvb9SqNM9OC8MFyjD2wOigm78yVJJZs4cHvJX5g9BnVrDilu5g',
+        token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1OTMwMDgyMDUsImV4cCI6MTU5MzA5NDYwNSwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjoiYmFzaWMiLCJjbGllbnRfaWQiOiI1Y2E0YWM4MzU5YzI0YTc4OTk0M2JkNzk0ODE4NDI4YSIsInNjb3BlIjpbImJhc2ljIl19.R1Tzp1meovu6tdhsMA5Mr_wnmeYK6niIUw9A5qBV7KThZnDe70eyUJgL5svq14DIN9WOfU-6-36DV0uXc24azO9O6FlM6aec2f_TVTMmG1uI421jkdyzAIhtpd2wKv-RvGs9G-lb-i3MI5sHlNRPT8Bov3BatCwIEKzZ6Mjgf_ICv8kU0nHWSDtgfHKm3Z_aVF23yWNDXz8Ve7xDiOCbRauoASLhGvuoJyQq3Bb4VaOYdrOdFHTb3Tg_vjxVVUSLCTSWEyBELlLewAI60L9TMQ_Sk6M6xue8K4L4etXFR-S7yZ7eWhLQxLgrFD5WoXMFSRv0bWfr8e4x-wBWvr-lZQ',
         expires_in: req.session.fatSecretTokenExpiresIn
     }
 
@@ -121,7 +121,7 @@ router.route('/get-recipe').get((req, res) => {
 
     let formData = {
         'method': 'recipe.get',
-        'recipe_id': '48064',
+        'recipe_id': req.params.id,
         'format': 'json'
     }
     
