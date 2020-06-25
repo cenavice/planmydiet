@@ -11,7 +11,7 @@ function RecipeData(props) {
   }
 
   recipeType = props.data.recipeType;
-  if (recipeType.length > 1) {
+  if (Array.isArray(recipeType) && recipeType.length > 1) {
     recipeType = props.data.recipeType[0];
   }
 
