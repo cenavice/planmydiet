@@ -89,9 +89,9 @@ router.route('/search-recipe').post((req, res) => {
 
     let formData = {
         'method': 'recipes.search',
-        'search_expression': '',
-        'page_number': 1,
-        'max_results': 20,
+        'search_expression': req.body.searchExpression,
+        'page_number': req.body.pageNumber,
+        'max_results': req.body.maxResults,
         'format': 'json'
     }
     
