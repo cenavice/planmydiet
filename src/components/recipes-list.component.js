@@ -82,8 +82,6 @@ export default class RecipesList extends Component {
           pageNumber: parseInt(response.data.recipes.page_number),
           totalResults: parseInt(response.data.recipes.total_results),
         });
-
-        console.log(this.state);
       })
       .catch(function (error) {
         console.log(error);
