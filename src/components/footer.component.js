@@ -4,7 +4,7 @@ export default class Footer extends Component {
     render() {
         return (
             <footer className="text-gray-700 body-font">
-                <div className="container px-5 pt-24 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col">
+                {/* <div className="container px-5 pt-24 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col">
                     <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
                         <button className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round"
@@ -86,7 +86,8 @@ export default class Footer extends Component {
                             </nav>
                         </div>
                     </div>
-                </div>
+                </div> */}
+
                 <div className="bg-gray-200">
                     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                         <p className="text-gray-500 text-sm text-center sm:text-left">© 2020 cenavice
