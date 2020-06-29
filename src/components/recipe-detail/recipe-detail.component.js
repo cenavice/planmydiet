@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nutrition from "./nutrition.component";
+import Nutrition from "./nutrition/nutrition.component";
 const axios = require("axios");
 
 function RecipeData(props) {
