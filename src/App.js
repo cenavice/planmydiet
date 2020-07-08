@@ -4,6 +4,7 @@ import './css/main.css';
 
 import Header from './components/header.component';
 import Home from './components/home.component';
+import TDEE from './components/tdee.component';
 import RecipesList from './components/recipes-list.component';
 import RecipeDetail from './components/recipe-detail.component';
 import About from './components/about.component';
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <Header/>
       <Route path="/" exact component={Home} />
+      <Route path="/tdee-calculator" component={TDEE} />
       <Route path="/recipes" component={RecipesList} />
       <Route path="/recipe/:id" component={RecipeDetail} />
       <Route path="/about" component={About} />
